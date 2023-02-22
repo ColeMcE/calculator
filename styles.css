@@ -26,7 +26,6 @@ div.view-window {
 }
 
 div.buttons {
-    border: solid 1px black;
     margin: 25px;
     height: 575px;
     width: 550px;
@@ -36,7 +35,56 @@ div.buttons {
     gap: 5px;
 }
 
-div.buttons div {
-    border: yellow solid 1px;
+.buttons div {
+    border: gray 1px;
     
+}
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: aliceblue;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 2em;
+
+}
+
+.zero {
+    grid-column: span 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.equals {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-row: span 2;
+    background-color: #f9530b;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 3em;
+    
+}
+
+.clear, .all-clear {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #6b6b6b;
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: white;
+
+}
+
+.operator {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d3eb00;
+    font-size: 2em;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
