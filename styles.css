@@ -35,11 +35,6 @@ div.buttons {
     gap: 5px;
 }
 
-.buttons div {
-    border: gray 1px;
-    
-}
-
 .number {
     display: flex;
     justify-content: center;
@@ -63,7 +58,7 @@ div.buttons {
     justify-content: center;
     align-items: center;
     grid-row: span 2;
-    background-color: #f9530b;
+    background-color: #ff7033;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 3em;
     
@@ -73,7 +68,7 @@ div.buttons {
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: #6b6b6b;
+    background-color: #58c4df;
     font-size: 2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     color: white;
@@ -88,3 +83,7 @@ div.buttons {
     font-size: 2em;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
+
+.button:hover {
+    filter: brightness(85%);
+  }
