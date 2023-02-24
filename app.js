@@ -17,7 +17,7 @@ clear.addEventListener("click", clearLast)
 
 //Updates number display when number is clicked
 function numbInput () {
-    if (calcInput.innerHTML.length < 6)    
+    if (calcInput.innerHTML.length < 9)    
         if (calcInput.innerHTML == "0") {
             calcInput.innerHTML = this.innerHTML
         }
