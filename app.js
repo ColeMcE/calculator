@@ -1,5 +1,6 @@
 //Declare Variables
 let numberButtons = document.getElementsByClassName("number");
+let operatorButtons = document.getElementsByClassName("operator");
 let calcInput = document.getElementById("number-display");
 let allClear = document.getElementById("ac-button");
 let clear = document.getElementById("clear-button");
@@ -10,6 +11,10 @@ calcInput.innerHTML = "0";
 //Add event listeners
 for (let i = 0; i < numberButtons.length; i++) {
     numberButtons[i].addEventListener("click", numbInput);
+    
+}
+for (let i = 0; i < operatorButtons.length; i++) {
+    operatorButtons[i].addEventListener("click", operationClick);
     
 }
 allClear.addEventListener("click", clearAll);
@@ -43,6 +48,10 @@ function clearLast () {
     else if (removeOne.length == 1) {
         clearAll();
     }
+}
+
+function operationClick () {
+    console.log("Operator button clicked");
 }
 
 
