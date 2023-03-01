@@ -52,7 +52,27 @@ function clearLast () {
 
 function operationClick () {
     console.log("Operator button clicked");
+    oper[this.id]();
 }
+
+let oper = {
+    add: function(x,y) {
+        (x + y);
+         console.log("add");
+    },
+    sub: function(x,y) {
+        (x - y);
+         console.log("subtract");
+    },
+    mult: function(x,y) {
+        (x * y);
+        console.log("multiply");
+    },
+    div: function(x,y) {
+        (x / y);
+         console.log("divide");
+    }
+  }
 
 
 
