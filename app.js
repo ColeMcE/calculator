@@ -5,15 +5,15 @@ const calcInput = document.getElementById("number-display");
 const allClear = document.getElementById("ac-button");
 const clear = document.getElementById("clear-button");
 const equals = document.getElementById("equal");
+
 //Declare operation variables
 let storedNumber = '';
-let clickedOperator = ''
+let clickedOperator = '';
 let firstNumber = '';
 let result = '';
+
 //Logic flags
 let equalsFlag = true;
-
-
 
 //Set initial display value
 calcInput.innerText = "0";
@@ -38,10 +38,12 @@ function numbInput () {
         if (calcInput.innerText == "0") {
             storedNumber = this.innerText;
             calcInput.innerText = storedNumber;
+            console.log("Stored value is " + storedNumber + ". and first number is " + firstNumber + " the equals flag is set at " + equalsFlag);
         }
         else {
             storedNumber += this.innerText;
             calcInput.innerText = storedNumber;
+            console.log("Stored value is " + storedNumber + ". and first number is " + firstNumber + " the equals flag is set at " + equalsFlag);
         }
     }
     else {
@@ -50,34 +52,41 @@ function numbInput () {
         if (calcInput.innerText == "0") {
             storedNumber = this.innerText;
             calcInput.innerText = storedNumber;
+            console.log("Stored value is " + storedNumber + ". and first number is " + firstNumber + " the equals flag is set at " + equalsFlag);
         }
         else {
             storedNumber += this.innerText;
             calcInput.innerText = storedNumber;
+            console.log("Stored value is " + storedNumber + ". and first number is " + firstNumber + " the equals flag is set at " + equalsFlag);
         }
-    }
-    
+        equalsFlag = true;
+    }  
 }
 
 function operationClick () {
-    if (firstNumber && storedNumber) {
+    if (firstNumber && storedNumber != '') {
         //equals function
         //oper[this.id](parseFloat(firstNumber), parseFloat(storedNumber));
         displayResult();
       }
     firstNumber = storedNumber;
     clickedOperator = this.id;
-    console.log(this.id);
     calcInput.innerText = storedNumber + this.innerText;
-    storedNumber = "";
-    console.log('FirstNumber' + firstNumber + 'Stored' + storedNumber);
+    storedNumber = "0";
+    console.log(this.id + ' was clicked, now FirstNumber is ' + firstNumber + ", stored number is now " + storedNumber);
 
 }
 
 function displayResult () {
-    result = parseFloat(oper[clickedOperator](parseFloat(firstNumber), parseFloat(storedNumber)));
-    calcInput.innerText = result;
-    storedNumber = result;
+    if (clickedOperator != '' && firstNumber != '') {
+        console.log("You are trying to calculate with a first number value of " + firstNumber + " and a stored value of " + storedNumber);
+        result = parseFloat(oper[clickedOperator](parseFloat(firstNumber), parseFloat(storedNumber)));
+        calcInput.innerText = result;
+        storedNumber = result;
+        firstNumber = "0";
+        console.log ("calculation attempted, now stored number is " + storedNumber + " and first number is " + firstNumber + ". The equals flag is now set at " + equalsFlag);
+    }
+    
 }
 
 function equalsClick () {
@@ -89,11 +98,10 @@ function equalsClick () {
 //Sets display value back to zero
 function clearAll () {
     storedNumber = "0";
-    firstNumber = "";
+    firstNumber = "0";
     calcInput.innerText = storedNumber;
     equalsFlag = true;
-    
-    
+       
 }
 
 //Removes last digit entered, resetting to zero if only one left
