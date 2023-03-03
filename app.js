@@ -51,8 +51,8 @@ function clearLast () {
 }
 
 function operationClick () {
-    console.log("Operator button clicked");
     oper[this.id]();
+
 }
 
 let oper = {
