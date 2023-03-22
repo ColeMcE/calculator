@@ -7,13 +7,10 @@ const clear = document.getElementById("clear-button");
 const equals = document.getElementById("equal");
 
 //Declare operation variables
-let storedNumber = '';
-let clickedOperator = '';
 let firstNumber = '';
+let secondNumber = '';
+let clickedOperator = '';
 let result = '';
-
-//Logic flags
-let equalsFlag = true;
 
 //Set initial display value
 calcInput.innerText = "0";
@@ -30,6 +27,46 @@ for (let i = 0; i < operatorButtons.length; i++) {
 allClear.addEventListener("click", clearAll);
 clear.addEventListener("click", clearLast);
 equals.addEventListener("click", equalsClick);
+
+function clearAll () {
+    calcInput.innerHTML = "0";
+    firstNumber = '';
+    secondNumber = '';
+    clickedOperator = '';
+    result = '';
+}
+
+function clearLast () {
+    if (calcInput.innerHTML != "0" && calcInput.innerHTML.length > 1) {
+        calcInput.innerHTML = calcInput.innerHTML.substring(0, calcInput.innerHTML.length-1);
+        
+    }
+    else {
+        calcInput.innerHTML = "0";
+    }
+
+}
+
+function equalsClick () {
+
+}
+
+function numbInput () {
+    if (calcInput.innerHTML != "0") {
+        calcInput.innerHTML += this.innerText;
+        
+    }
+    
+    else {
+        calcInput.innerHTML = this.innerText;
+        
+    }
+
+}
+
+function operationClick () {
+
+}
 
 
 let oper = {
@@ -50,6 +87,5 @@ let oper = {
          console.log("divide");
     }
   }
-
 
 
